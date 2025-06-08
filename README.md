@@ -4,7 +4,7 @@
 
 USD8 is a stablecoin that offers cover for crypto hacks by operating a Cover Pool from its own revenue, allowing hacking victims to claim losses from the pool.
 
-<span style="font-size:9pt">Early adopters - [join telegram](https://t.me/+sl4knzNQFE8xYmE1)</span>    
+<span style="font-size:9pt">Get in early - [join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](https://x.com/USD8_official)</span>    
 
 <img src="./assets/3d8.png" width="500px"/>      
 
@@ -47,11 +47,11 @@ More details coming soon...
 more to add...
 
 # Contact The Team
-[Telegram Group](https://t.me/+sl4knzNQFE8xYmE1)
+<span style="font-size:9pt">[join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](https://x.com/USD8_official)</span>   
 
 <br/>
 <br/>
 <br/>
 <img src="./assets/logo.png" width="100px" />
 
-<span style="font-size:9pt">Disclaimer : Feel free to share this doc privately but be aware that the protocol is currently under heavy development, and the design might change.</span>
+<span style="font-size:9pt">Disclaimer : Feel free to share this doc privately but be aware that the protocol is currently under heavy development, and the design might change.</span>    
