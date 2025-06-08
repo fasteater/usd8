@@ -1,16 +1,12 @@
 <img src="./assets/logo.png" width="300px" />
-<br/>
-<br/> 
 
-# USD8 - a new stablecoin covers crypto hacks.
+# USD8 - a new stablecoin covers crypto hacks
 
 USD8 is a stablecoin that offers cover for crypto hacks by operating a Cover Pool from its own revenue, allowing hacking victims to claim losses from the pool.
 
 <span style="font-size:9pt">Early adopters - [join telegram](https://t.me/+sl4knzNQFE8xYmE1)</span>    
 
 <img src="./assets/3d8.png" width="500px"/>      
-<br/> 
-<br/> 
 
 # Why
 - Crypto hacks remain a major roadblock for DeFi adoption
@@ -51,7 +47,7 @@ More details coming soon...
 more to add...
 
 # Contact The Team
-Telegram @youeattoomuch
+[Telegram Group](https://t.me/+sl4knzNQFE8xYmE1)
 
 <br/>
 <br/>
