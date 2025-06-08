@@ -15,7 +15,7 @@ USD8 is a stablecoin that offers cover for crypto hacks by operating a Cover Poo
 # How
 - USD8 maintains a Cover Pool from its own revenue, then vets and offers permissionless coverage for selected DeFi protocols
 - USD8 tokens can be borrowed with a CDP using USDC as collateral
-- Users accumulate Cover Score by holding and using USD8, Cover Score is non-transferable
+- Users accumulate Cover Score by holding and using USD8 in yield, LP. Cover Score is non-transferable
 - Users can claim losses from the Cover Pool after a hack, this process does not require Cover Score, but the more Cover Score, the more claim weight a user has
 - Claims are limited by:
     - the user's total loss
