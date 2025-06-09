@@ -21,8 +21,8 @@ Get in early - [join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](ht
     - the user's total loss
     - the overall Cover Pool size
     - the coverage rate for the hacked protocol
-- A group of third party industry KOLs determines if a hack is legit and should be covered
-- Claiming process is permissionless and non-reversible, users are required to trade in their hacked protocol LP token. 
+- A committee of third party industry KOLs determines if a hack is legit and should be covered
+- Claiming process is permissionless and non-reversible, users might need to trade in their hacked protocol LP token if applicable. 
 
 More details coming soon...
 
