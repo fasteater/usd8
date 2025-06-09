@@ -25,8 +25,8 @@ Like USDC, but set aside a % treasury yield to cover defi hacks.
 - A committee of third party industry KOLs determines if a hack is legit and should be covered
 - Claiming process is permissionless and non-reversible, users might need to trade in their hacked protocol LP token if applicable. 
 
-
-More details coming soon...
+# Fine Details
+Coming soon...
 
 # About Us
 - We are a team of security experts in the DeFi space
