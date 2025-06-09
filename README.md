@@ -95,8 +95,10 @@ Like USDC, but set aside a % treasury yield to cover defi hacks.
 
 more to add...
 
-# Contact The Team
-<span style="font-size:9pt">[join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](https://x.com/USD8_official)</span>   
+# Join The Team
+We are looking for growth hackers / marketers to join the ride, please ping @youeattoomuch on telegram.
+
+[Join telegram](https://t.me/+sl4knzNQFE8xYmE1), [Follow on X](https://x.com/USD8_official) 
 
 <br/>
 <br/>
