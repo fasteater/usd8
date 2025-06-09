@@ -8,21 +8,23 @@ Get in early - [join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](ht
 
 <img src="./assets/3d8.png" width="500px"/>      
 
+# TLDR;
+Like USDC, but set aside a % treasury yield to cover defi hacks.
+
 # Why
 - Crypto hacks remain a major roadblock for DeFi adoption
 - Current industry solutions focus on preventing hacks with audits, but this does not guarantee security and thus does not solve users' pain points
 
 # How
-- USD8 maintains a Cover Pool from its own revenue, then vets and offers permissionless coverage for selected DeFi protocols
-- USD8 tokens can be borrowed with a CDP using USDC as collateral
-- Users accumulate Cover Score by holding and using USD8 in yield, LP. Cover Score is non-transferable
-- Users can claim losses from the Cover Pool after a hack, this process does not require Cover Score, but the more Cover Score, the more claim weight a user has
+- Users mint USD8 with USDC, USDC goes into treasury for yield. Part of the yield profit is set aside into a Cover Pool to cover potential hacks
+- Users use/hold/LP/yield with USD8 to accumulate Cover Credits (non-transferrable) which they can use to claim any type of hacking loss from covered protocols
 - Claims are limited by:
     - the user's total loss
     - the overall Cover Pool size
     - the coverage rate for the hacked protocol
 - A committee of third party industry KOLs determines if a hack is legit and should be covered
 - Claiming process is permissionless and non-reversible, users might need to trade in their hacked protocol LP token if applicable. 
+
 
 More details coming soon...
 
