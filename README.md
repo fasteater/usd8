@@ -2,7 +2,7 @@
 
 # USD8 - a new stablecoin covers crypto hacks
 
-USD8 is a stablecoin that offers cover for crypto hacks by operating a Cover Pool from its own revenue, allowing hacking victims to claim losses from the pool.
+USD8 is a stablecoin that offers cover for crypto hacks by operating a Cover Pool from its own revenue, allowing victims to claim any token losses from covered protocol hacks.
 
 Get in early - [join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](https://x.com/USD8_official) 
 
@@ -17,7 +17,7 @@ Like USDC, but set aside a % treasury yield to cover defi hacks.
 
 # How
 - Users mint USD8 with USDC, USDC goes into treasury for yield. Part of the yield profit is set aside into a Cover Pool to cover potential hacks
-- Users use/hold/LP/yield with USD8 to accumulate Cover Credits (non-transferrable) which they can use to claim any type of hacking loss from covered protocols
+- Users use/hold/LP/yield with USD8 to accumulate Cover Credits (non-transferrable) which they can use to claim any type of hacking loss from covered protocols for any tokens (not limited to USD8 positions)
 - Claims are limited by:
     - the user's total loss
     - the overall Cover Pool size
