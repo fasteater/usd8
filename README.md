@@ -85,7 +85,7 @@ Here are a very rough projection based on 4 different sized stable coins current
 
 | USD8 Supply | Eqv Size of | Reserve APY | Gross Rev | % Rev for Cover Pool | Cover Pool Size | Net Rev  |
 | ----------- | ----------- | ----------- | --------- | -------------------- | --------------- | -------- |
-| 100 mil     | FraxUSD     | 0.05        | 5 mil     | 50%                  | 2.5 mil         | 4 mil    |
+| 100 mil     | FraxUSD     | 0.05        | 5 mil     | 50%                  | 2.5 mil         | 2.5 mil  |
 | 840 mil     | crvUSD      | 0.05        | 42 mil    | 10%                  | 4.2 mil         | 37.8 mil |
 | 60.6 bil    | USDC        | 0.03        | 1.8 bil   | 5%                   | 90 mil          | 1.71 bil |
 | 155 bil     | USDT        | 0.02        | 3.1 bil   | 3%                   | 93 mil          | 3 bil    |
