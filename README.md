@@ -79,6 +79,22 @@ Like USDC, but set aside a % treasury yield to cover defi hacks.
 - We are a team of security experts in the DeFi space
 - We hope to build a long-term protocol benefiting the security and adoption of crypto
 
+# Financial Projections
+Here are a very rough projection based on 4 different sized stable coins currently in the industry, note this projection only consider expense of Cover Pool. It shows the Cover Pool size can be significant to provide the industry with a meaningful cushion once the size of USD8 is big enough.
+
+
+| USD8 Supply | Eqv Size of | Reserve APY | Gross Rev | % Rev for Cover Pool | Cover Pool Size | Net Rev  |
+| ----------- | ----------- | ----------- | --------- | -------------------- | --------------- | -------- |
+| 100 mil     | FraxUSD     | 0.05        | 5 mil     | 50%                  | 2.5 mil         | 4 mil    |
+| 840 mil     | crvUSD      | 0.05        | 42 mil    | 10%                  | 4.2 mil         | 37.8 mil |
+| 60.6 bil    | USDC        | 0.03        | 1.8 bil   | 5%                   | 90 mil          | 1.71 bil |
+| 155 bil     | USDT        | 0.02        | 3.1 bil   | 3%                   | 93 mil          | 3 bil    |
+
+
+* % Rev for Cover Pool - how much rev USD8 put into the cover pool
+* Cover Pool - assume cover pool will be exhausted all the time and requires replenish, but in reality its more likely there will be enough in the pool, USD8 does not need to replenish to maintain the balance, this give us more net revenue.
+
+
 # Partners & Initial Coverage (Tentative)
 - OpenZeppelin
 - Uniswap
