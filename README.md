@@ -76,8 +76,8 @@ Like USDC, but set aside a % treasury yield to cover defi hacks.
 
 
 # About Us
-- We are a team of security experts in the DeFi space
-- We hope to build a long-term protocol benefiting the security and adoption of crypto
+- We are a team of security experts from reputable companies in the DeFi space
+- We see the industry gap and hope to build a long-term protocol benefiting the security and adoption of defi
 
 # Financial Projections
 Here are a very rough projection based on 4 different sized stable coins currently in the industry, note this projection only consider expense of Cover Pool. It shows the Cover Pool size can be significant to provide the industry with a meaningful cushion once the size of USD8 is big enough.
