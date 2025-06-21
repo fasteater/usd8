@@ -1,4 +1,4 @@
-<img src="./assets/logo.png" width="300px" />
+<img src="./public/assets/logo.png" width="300px" />
 
 # USD8 - a new stablecoin covers crypto hacks
 
@@ -6,7 +6,7 @@ USD8 is a stablecoin that offers cover for crypto hacks by operating a Cover Poo
 
 Get in early - [join telegram](https://t.me/+sl4knzNQFE8xYmE1), [follow on X](https://x.com/USD8_official) 
 
-<img src="./assets/3d8.png" width="500px"/>      
+<img src="./public/assets/tyche-mobile.png" width="500px"/>      
 
 # TLDR;
 Like USDC, but set aside a % treasury yield to cover defi hacks.
