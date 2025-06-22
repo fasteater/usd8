@@ -36,16 +36,16 @@ export default function LandingPage() {
 
   return (
     <div className="font-blex min-h-screen bg-[#252525] text-white flex flex-col items-center justify-center p-4">
-      <img src="/usd8/assets/logo.png" className="md:w-[269px] w-[200px] h-auto z-10 mt-[80px] mb-[20px]"/>
+      <img src="/assets/logo.png" className="md:w-[269px] w-[200px] h-auto z-10 mt-[80px] mb-[20px]"/>
       <p className="mt-2 items-center text-base">Protection Wrapper for Stable Coins</p>
 
       <img
-        src="/usd8/assets/tyche-statue.png"
+        src="/assets/tyche-statue.png"
         alt="Tyche Statue"
         className="hidden md:block w-[1044px] h-auto z-10 mt-[50px] mb-[50px]"
       />
       <img
-        src="/usd8/assets/tyche-mobile.png"
+        src="/assets/tyche-mobile.png"
         alt="Tyche Statue"
         className="block md:hidden w-[1044px] h-auto z-10 mt-[50px] mb-[50px]"
       />

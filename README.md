@@ -122,3 +122,10 @@ We are looking for growth hackers / marketers to join the ride, please ping @you
 <img src="./assets/logo.png" width="100px" />
 
 Disclaimer : Feel free to share this doc privately but be aware that the protocol is currently under heavy development, and the design might change.  
+
+
+
+
+
+npm run build
+npm run deploy to deploy to github pages
