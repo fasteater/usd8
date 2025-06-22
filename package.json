@@ -7,8 +7,7 @@
     "build": "vite build",
     "postbuild": "cp dist/index.html dist/404.html",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist && git add . && git commit -m 'deploy' && git push"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0",
