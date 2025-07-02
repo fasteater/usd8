@@ -7,7 +7,7 @@
     "build": "vite build",
     "postbuild": "cp dist/index.html dist/404.html && echo 'usd8.finance' > dist/CNAME",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.0",
