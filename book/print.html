@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>USD8 Docs</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">USD8 Docs</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><img src="https://usd8.finance/assets/logo.png" width="200" /><br/><br/></p>
+<h1 id="what-is-usd8"><a class="header" href="#what-is-usd8">What is USD8</a></h1>
+<p>USD8 is a stablecoin wrapper with extra super powers. Anyone can wrap or unwrap USD8 to and from the underlying stablecoin. By using USD8, users gain additional benefits on top of the underlying asset, while still retaining its core properties such as yield and a stable peg.</p>
+<p>At launch, USD8 will accept USDC as the underlying stablecoin. Other stablecoins may be added in the future.</p>
+<br/>
+<br/>
+<br/>
+<p><img src="https://usd8.finance/assets/tyche-statue.png" width="600" /><br/></p>
+<h1 id="super-powers"><a class="header" href="#super-powers">Super Powers</a></h1>
+<p>USD8’s super powers are modular and often passive features, each providing users with unique benefits. By stacking these features, USD8 becomes a powerful stable asset with unlimited potential.</p>
+<p>Below is a list of USD8’s super powers currently in development. Some will be available at launch, while others will be added over time:</p>
+<ul>
+<li><a href="./covertoken.html">Cover Token – DeFi hack coverage.</a></li>
+<li><span class="inactive">Aggregated Exposure – Reduce collateral exposure risk.</span></li>
+<li><span class="inactive">Free Transfers – Gas reimbursement for transfers.</span></li>
+<li><span class="inactive">Privacy – Hide token balances and activities.</span></li>
+<li><span class="inactive">And many more…</span>
+<br/>
+<br/>
+<br/></li>
+</ul>
+<h1 id="why-should-i-use-usd8"><a class="header" href="#why-should-i-use-usd8">Why should I use USD8?</a></h1>
+<p>USD8 offers far more benefits than traditional stablecoins, while still maintaining the core properties of your current stablecoins. You can hold USD8 as a cash reserve or use it for yield. As USD8 grows, we expect to add even more exciting super powers, making it the first extendable stable asset.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="super-powers-1"><a class="header" href="#super-powers-1">Super Powers</a></h1>
+<p>Super Powers are at the core of USD8, providing users with stacked benefits and unlimited potential. Use the left navigation to explore USD8's Super Powers.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-cover-token"><a class="header" href="#-cover-token">🥷 Cover Token</a></h1>
+<p>The Cover Token is a non-transferable token that allows holders to claim reimbursement—up to a limit—if any of their positions are hacked in a vetted DeFi protocol (not limited to USD8 positions). The more Cover Tokens a user holds, the greater their potential reimbursement. Reimbursements are paid from a Cover Pool financed by USD8.</p>
+<p>The only way to obtain Cover Tokens is by using USD8—whether holding, staking, or yielding. Cover Tokens are automatically accrued to USD8 users every block.</p>
+<ul>
+<li>Accrual rates are set by USD8 and may differ for holding, staking, or yielding.</li>
+<li>Users can claim reimbursement from the Cover Pool by burning Cover Tokens.</li>
+<li>The only way to obtain Cover Tokens is through using USD8.</li>
+<li>Cover Tokens never expire.</li>
+</ul>
+<br/>
+<br/>
+<br/>
+<h1 id="-coverage-limits"><a class="header" href="#-coverage-limits">👌🏽 Coverage Limits</a></h1>
+<p>Cover Tokens provide coverage for up to a maximum of 90% of a user's loss. The actual percentage is calculated per claim and depends on the following factors:</p>
+<ul>
+<li>The user's loss and Cover Token balance</li>
+<li>The aggregated loss and Cover Token balance from all claimants for the hack</li>
+<li>The per-protocol coverage tier</li>
+<li>The current Cover Pool size</li>
+</ul>
+<p>This means a small Cover Token balance might still receive high coverage if there are few claimants, but a large balance might not guarantee high coverage if many others are also claiming with large balances.</p>
+<p>In general, the larger a user's Cover Token balance, the greater the payout. This process is on-chain, with all information publicly available.</p>
+<br/>
+<br/>
+<br/>
+<h1 id="-cover-pool"><a class="header" href="#-cover-pool">👛 Cover Pool</a></h1>
+<p>The Cover Pool is financed exclusively by USD8’s own earnings; user deposits remain untouched in a segregated Reserve Pool. The Cover Pool may start small, but as USD8’s user base and fee revenue grow, so does the size of the Cover Pool. This means the pool might not be able to cover 100% of hack losses, especially in the early days of USD8. However, we believe partial coverage is better than none, and we aim to grow the pool significantly as USD8 expands.</p>
+<p>If a major payout drains the pool, USD8 will divert a portion of future profits to refill it on a monthly schedule until the target balance is restored.</p>
+<br/>
+<br/>
+<br/>
+<h1 id="-covered-defi-protocols"><a class="header" href="#-covered-defi-protocols">🤞 Covered DeFi Protocols</a></h1>
+<p>Cover Token extends permissionless hack coverage to selected DeFi protocols up to a limit. Our in-house security team performs independent audits and continuous reviews to ensure each listed protocol meets rigorous safety standards.</p>
+<p>Each protocol is assigned a tier that caps the share of the Cover Pool available for any single incident:</p>
+<ul>
+<li>Platinum – up to 100% of the Cover Pool</li>
+<li>Gold – up to 80% of the Cover Pool</li>
+<li>Silver – up to 40% of the Cover Pool</li>
+<li>Bronze – up to 10% of the Cover Pool</li>
+</ul>
+<p>Current covered protocols:</p>
+<div class="table-wrapper"><table><thead><tr><th>NO.</th><th>Protocol</th><th>Time</th><th>Type</th><th>Condition</th></tr></thead><tbody>
+<tr><td>1</td><td>USD8</td><td>Launch</td><td>Platinum</td><td><code>1 USD8 redeems &lt; $0.7</code></td></tr>
+<tr><td>2</td><td>Uniswap V2</td><td>Launch</td><td>Gold</td><td><code>amt0 * amt1 &lt; 70% * k where amt0 and amt1 are the amount of tokens redeemable from 1 LP token,  k is the tracked historical value of amt0 * amt1</code></td></tr>
+<tr><td>4</td><td>Aave V3</td><td>Launch</td><td>Gold</td><td><code>ValueOfSingleLP &lt; 0.7 underlying</code></td></tr>
+<tr><td>5</td><td>Lido</td><td>Launch</td><td>Gold</td><td><code>1 stEth redeems &lt; 0.7 Eth</code> or <code>1 wstEth redeems &lt; 0.7 Eth</code></td></tr>
+<tr><td>6</td><td>Rocket Pool</td><td>Launch</td><td>Gold</td><td><code>1 rEth redeems &lt; 0.7 Eth</code></td></tr>
+<tr><td>7</td><td>Uniswap V3</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+<tr><td>8</td><td>Uniswap V4</td><td>TBD</td><td>TBD</td><td>TBD</td></tr>
+</tbody></table>
+</div>
+<p>The USD8 team verifies, assigns, and—when necessary—updates these covers on an ongoing basis. Coverage announcements, upgrades, downgrades, or removals are published transparently, and we encourage users to use only protocols that carry an active USD8 cover tier.</p>
+<br/>
+<br/>
+<br/>
+<h1 id="-claims"><a class="header" href="#-claims">💵 Claims</a></h1>
+<p>Claims can be initiated permissionlessly at any time against the Cover Pool if claim conditions are met.</p>
+<p>Once initiated, other users will have a two-week window to join the claim. After that, claims can be finalized.</p>
+<ul>
+<li>The protocol computes each claimant’s payout based on the total claim amount and Cover Token balance based on the following</li>
+<li>Claimants transfer the compromised LP/position tokens and burn the required Cover Tokens.</li>
+<li>Reimbursement is paid in USD8, calculated at the current oracle price.</li>
+<li>The LP token is removed from after a claim</li>
+</ul>
+<p>The system uses the following formula to calculate actual reimburse amount for each user: <br/><br/></p>
+<p>$$actualAmt = max(\frac{coverPoolSize * protocolCoverLimit * userLpAmt}{\displaystyle\sum_{i=1}^n(1 + \frac{userCoverToken_i * f}{userLp_i}) * userLp_i}, 0.9 * lpValueBeforeHack)$$</p>
+<ul>
+<li><code>protocolCoverLimit</code> is the factor associated with the cover type for this protocol</li>
+<li><code>n</code> is the total number of claims</li>
+<li><code>f</code> is a constant set by protocol</li>
+<li><code>lpValueBeforeHack</code> is the LP value before the hack</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="open-system"><a class="header" href="#open-system">Open System</a></h1>
+<p>USD8 is designed to an open system, it offers various hooks for third party developers to build on top of USD8 and offer more Super Powers to USD8 users. Current hooks in design are</p>
+<ul>
+<li>before and after Transfer</li>
+<li>before and after Receive</li>
+<li>before and after Approval</li>
+<li>before and after Mint</li>
+<li>before and after Burn</li>
+<li>after TimeInterval</li>
+</ul>
+<p>User will be able to add third party hooks to their account, these hooks will be called at their designated time during USD8's life cycle.</p>
+<p>If you have a hook idea could benefit USD8 users, we would love to hear from you - info [at] USD8.finance.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="faqs"><a class="header" href="#faqs">FAQs</a></h1>
+<h2 id="what-are-the-risks-and-how-are-they-minimized"><a class="header" href="#what-are-the-risks-and-how-are-they-minimized">What are the risks and how are they minimized?</a></h2>
+<p>The general risks associated with using USD8 are:</p>
+<ol>
+<li>USD8 smart contract risks</li>
+<li>Risks from the underlying yield protocols</li>
+</ol>
+<p>How we minimize these risks:</p>
+<ol>
+<li>We take a security-first approach when building USD8, including third-party audits. The Cover Token also provides coverage for the USD8 protocol.</li>
+<li>We only use top blue-chip DeFi protocols for yield, and our team thoroughly verifies each codebase.</li>
+</ol>
+<br/>
+<br/>
+<h2 id="can-i-build-a-third-party-super-power-for-usd8"><a class="header" href="#can-i-build-a-third-party-super-power-for-usd8">Can I build a third-party Super Power for USD8?</a></h2>
+<p>Yes! Reach out to us as early as possible so our team can assist you. Contact: info[at]usd8.finance
+<br/>
+<br/></p>
+<h2 id="how-big-is-the-cover-pool"><a class="header" href="#how-big-is-the-cover-pool">How big is the Cover Pool?</a></h2>
+<p>It depends on how many users are using USD8, the more users, the bigger Cover Pool. We aim to grow it as big and as fast as we can, however this might take a process. Regardless, it is always beneficial to get in early and start accrue Cover Tokens, so when the Cover Pool is big you can enjoy the coverage.</p>
+<br/>
+<br/>
+<h2 id="is-my-position-covered-even-if-its-not-related-to-usd8"><a class="header" href="#is-my-position-covered-even-if-its-not-related-to-usd8">Is my position covered even if it's not related to USD8?</a></h2>
+<p>Yes, as long as you hold Cover Token and you are using a covered protocol, all your positions are covered. Cover Tokens provide coverage independently of whether those positions involve USD8 directly.</p>
+<br/>
+<br/>
+<h2 id="will-i-get-90-full-coverage-if-i-am-hacked"><a class="header" href="#will-i-get-90-full-coverage-if-i-am-hacked">Will I get 90% full coverage if I am hacked?</a></h2>
+<p>It depends. Cover Token payouts aren’t structured like traditional insurance. You’re most likely to receive the full 90 % if:</p>
+<ul>
+<li>you hold more Cover Tokens than other claimants, or</li>
+<li>few other users join the claim, or</li>
+<li>other claimants hold similarly small Cover Token balances</li>
+</ul>
+<p>In general, the more Cover Token you have, the better the payout.
+<br/>
+<br/></p>
+<h2 id="how-do-you-prevent-fraudulent-claims"><a class="header" href="#how-do-you-prevent-fraudulent-claims">How Do You Prevent Fraudulent Claims?</a></h2>
+<p>Cover Token is carefully designed with game theory, the claiming process is open and permissionless, anyone can initiate a claim. However there are a few safeguards</p>
+<ol>
+<li>To initiate a claim, protocol-specific conditions must be met.<br />
+Typically, the claimant’s LP‐token value must have dropped below a set threshold.</li>
+<li>Coverage is capped at 90 % of LP value. If the LP value hasn’t actually fallen, the claimant effectively loses money, disincentivizing false claims.</li>
+</ol>
+<p>Detailed protocol-specific conditions <a href="./covertoken.html#-covered-defi-protocols">here</a>.
+<br/>
+<br/></p>
+<h2 id="who-is-behind-usd8"><a class="header" href="#who-is-behind-usd8">Who is behind USD8?</a></h2>
+<p>We are a team of top-tier security auditors with over 5 years of experience auditing smart contracts, particularly DeFi protocols and Layer 2 solutions in the Ethereum ecosystem, our identity will be revealed at launch.</p>
+<br/>
+<br/>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

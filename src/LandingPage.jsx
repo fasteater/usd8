@@ -37,7 +37,7 @@ export default function LandingPage() {
   return (
     <div className="font-blex min-h-screen bg-[#252525] text-white flex flex-col items-center justify-center p-4">
       <img src="/assets/logo.png" className="md:w-[269px] w-[200px] h-auto z-10 mt-[80px] mb-[20px]"/>
-      <p className="mt-2 items-center text-base">Protection Wrapper for Stable Coins</p>
+      <p className="mt-2 items-center text-base">Stable Coin Wrapper with Super Powers</p>
 
       <img
         src="/assets/tyche-statue.png"
@@ -51,8 +51,8 @@ export default function LandingPage() {
       />
 
       <p className="text-center text-base mb-10 leading-[30px] md:leading-[43px]">
-        Wrap your stables for hack protection. <br />
-        Built by security auditors, for defi users.
+        USD8 gives stable coin super powers, like hack protection, free transfer, privacy and more. <br />
+        Built by security auditors, for defi users. <br /> Coming soon. 
       </p>
 
       <div className="w-full max-w-md text-center mt-[80px] ">
@@ -69,10 +69,10 @@ export default function LandingPage() {
             id="stable-amount"
             name="stable-amount"
             ref={budgetRef}
-            className="w-full block mx-auto px-6 md:py-4 py-5 bg-gray-200 text-black rounded mb-[40px]"
+            className="appearance-none w-full block mx-auto px-6 md:py-4 py-5 bg-gray-200 text-black rounded mb-[40px]"
             required
           >
-            <option value="0">How much will you wrap into USD8</option>
+            <option value="0">Amount to wrap?</option>
             <option value="500">up to $500</option>
             <option value="1000">up to $1k</option>
             <option value="10000">up to $10k</option>
@@ -85,7 +85,7 @@ export default function LandingPage() {
             {loading ? (
            "Hold on ..."
           ) : (
-            "join in"
+            "join waiting list"
           )}
           </button>
         )}
@@ -103,7 +103,7 @@ export default function LandingPage() {
           X.com/usd8
         </a>
         <span className="w-[100px] h-auto"></span>
-        <a href="/docs" className="hover:text-white">Docs</a>
+        <a href="https://docs.usd8.finance" className="hover:text-white">Docs</a>
       </footer>
     </div>
   );

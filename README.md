@@ -129,3 +129,4 @@ Disclaimer : Feel free to share this doc privately but be aware that the protoco
 
 npm run build
 npm run deploy to deploy to github pages
+npm run dev -- --host
