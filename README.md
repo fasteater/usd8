@@ -1,4 +1,7 @@
-# USD8
+<img src="https://usd8.finance/assets/logo.png" width="300px" />
+<br/><br/>
+
+# USD8     
 Stable Coin Wrapper with Super Powers.    
 website https://usd8.finance.   
 docs https://docs.usd8.finance.   

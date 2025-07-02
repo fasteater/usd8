@@ -52,7 +52,7 @@ export default function LandingPage() {
 
       <p className="text-center text-base mb-10 leading-[30px] md:leading-[43px]">
         USD8 gives stable coin super powers, like hack protection, free transfer, privacy and more. <br />
-        Built by security auditors, for defi users. <br /> Coming soon. 
+        Built by security auditors, for defi users. 
       </p>
 
       <div className="w-full max-w-md text-center mt-[80px] ">
