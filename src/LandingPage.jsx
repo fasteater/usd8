@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = 'https://sqgkhcgjwiskwfraanth.supabase.co';
@@ -8,28 +8,66 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export default function LandingPage() {
   const emailRef = useRef(null);
   const budgetRef = useRef(null);
+  const invitationRef = useRef(null); 
   const [success, setSuccess] = useState(false);
   const [responded, setResponded] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [invitationValue, setInvitationValue] = useState(""); // Add state for invitation
+  const [errorCode, setErrorCode] = useState(null); // Track error code
+  const [tokenAllocation, setTokenAllocation] = useState(null); // Track token allocation
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get("code");
+    if (code) {
+      setInvitationValue(code);
+      if (invitationRef.current) invitationRef.current.value = code;
+    }
+  }, []);
+
+  const validateEmail = (email) => {
+    // Simple regex for email validation
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
   const handleJoinInClick = async (e) => {
     e.preventDefault();
     setLoading(true);
+    setErrorCode(null);
+    setTokenAllocation(null);
     const email = emailRef.current.value;
     const budget = budgetRef.current.value;
+    const invitation = invitationRef.current.value || null;
 
-    const { data } = await supabase
-      .rpc('webjoin', {email, budget});
-  
-    console.log(data);
-    setResponded(true);
-
-    if (!data) {
+    // Frontend email validation
+    if (!validateEmail(email)) {
+      setLoading(false);
       setSuccess(false);
-    
-    } else {
-      setSuccess(true);
+      setResponded(true);
+      setErrorCode(null); // Use null to trigger the 'Incorrect email' message
+      return;
+    }
+
+    try {
+      const response = await fetch('https://sqgkhcgjwiskwfraanth.supabase.co/functions/v1/webjoinWithInvitation', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, budget, invitation })
+      });
+      const result = await response.json();
+      setResponded(true);
+      if (result.code === 0) {
+        setSuccess(true);
+        if (result.tokenAllocation !== undefined && result.tokenAllocation !== null) {
+          setTokenAllocation(result.tokenAllocation);
+        }
+      } else {
+        setSuccess(false);
+        setErrorCode(result.code);
+      }
+    } catch (err) {
+      setSuccess(false);
+      setErrorCode(2);
     }
     setLoading(false);
   };
@@ -56,7 +94,6 @@ export default function LandingPage() {
       </p>
 
       <div className="w-full max-w-md text-center mt-[80px] ">
-        <label className="block mb-2 text-sm mb-[40px]">waiting list</label>
         <input
           type="email"
           placeholder="Email"
@@ -80,6 +117,14 @@ export default function LandingPage() {
             <option value="1000000">up to $1 million</option>
           </select>
         </div>
+        <input
+          type="text"
+          placeholder="Invitation Code (optional)"
+          ref={invitationRef}
+          value={invitationValue}
+          onChange={e => { setInvitationValue(e.target.value); setResponded(false); }}
+          className="w-full block mx-auto px-6 md:py-4 py-5 bg-gray-200 text-black rounded mb-[40px] "
+        />
         {!success && !responded &&(
           <button disabled={loading} className="bg-[#00B7AB] hover:bg-[#00CC99] text-black font-semibold md:px-6 md:py-4 px-8 py-5 rounded" onClick={handleJoinInClick}>
             {loading ? (
@@ -89,11 +134,27 @@ export default function LandingPage() {
           )}
           </button>
         )}
-        {success && responded && (
+        {success && responded && tokenAllocation !== null ? (
+          <div style={{ color: "green", marginTop: "10px" }}>
+            You are on the waiting list! The invitation code gives you {tokenAllocation} Cover Token Allocation. <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-400">Follow our X</a> for updates.
+          </div>
+        ) : success && responded && (
           <div style={{ color: "green", marginTop: "10px" }}>You are on the waiting list! <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-400">Follow our X</a> for more updates.</div>
         )}
-        {!success && responded && (
+        {!success && responded && errorCode === 1 && (
+          <div style={{ color: "red", marginTop: "10px" }}>This email is already on the waiting list.</div>
+        )}
+        {!success && responded && errorCode === 2 && (
+          <div style={{ color: "red", marginTop: "10px" }}>An unexpected error occurred, is your email valid?</div>
+        )}
+        {!success && responded && errorCode === 4 && (
+          <div style={{ color: "red", marginTop: "10px" }}>Invitation code not found. Please check your code.</div>
+        )}
+        {!success && responded && errorCode === null && (
           <div style={{ color: "red", marginTop: "10px" }}>Incorrect email, please try again.</div>
+        )}
+        {!success && responded && errorCode === 'invalid_email' && (
+          <div style={{ color: "red", marginTop: "10px" }}>Please enter a valid email address.</div>
         )}
        {/* <p className="text-xs text-gray-600 mt-[30px]">batch one 800/1000</p> */}
       </div>
