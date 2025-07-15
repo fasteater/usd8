@@ -1,3 +1,14 @@
+//UUWWWWWUUWWWWWWUUUUWWWWWWWWWWWWWUUUWWWWWWWWWWWWUUUUUWWWWWWWWWWWWWUU
+//UZ      U       UU              UUU             ZUU               U
+//UZ      U       UU              UUU              UU       U       U
+//UZ      U       UU        WUUUUUUUU      Z       UU       W       U
+//UZ      U       UU              UUU      Z       UU               U
+//UZ      U       UU              UUU      Z       UU               U
+//UZ              UUUWUWUW        UUU      Z       UU       W       U
+//UZ              UU              UUU              UU       U       U
+//UZ              UU              UUU             ZUU               U
+//UUWWWWWWWWWWWWWUUUUWWWWWWWWWWWWWUUUWWWWWWWWWWWWUUUUUWWWWWWWWWWWWWUU
+
 import React, { useState, useRef, useEffect } from "react";
 import { createClient } from '@supabase/supabase-js';
 
@@ -136,7 +147,7 @@ export default function LandingPage() {
         )}
         {success && responded && tokenAllocation !== null ? (
           <div style={{ color: "green", marginTop: "10px" }}>
-            You are on the waiting list! The invitation code gives you {tokenAllocation} Cover Token Allocation. <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-400">Follow our X</a> for updates.
+            You are on the waiting list! The invitation code gives you {tokenAllocation} Cover Token Allocation. <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-400">Follow our X</a> for future redeem instructions.
           </div>
         ) : success && responded && (
           <div style={{ color: "green", marginTop: "10px" }}>You are on the waiting list! <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white text-gray-400">Follow our X</a> for more updates.</div>
@@ -161,7 +172,7 @@ export default function LandingPage() {
 
       <footer className=" bottom-4 flex text-gray-400 mb-[100px] mt-[200px]">
         <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-          X.com/usd8
+          X.com/usd8_official
         </a>
         <span className="w-[100px] h-auto"></span>
         <a href="https://docs.usd8.finance" className="hover:text-white">Docs</a>
