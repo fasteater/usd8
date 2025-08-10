@@ -8,3 +8,30 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.transition-all {
+  transition-property: all;
+}
+.translate-y-8 {
+  transform: translateY(2rem);
+}
+.translate-y-0 {
+  transform: translateY(0);
+}
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+  100% { transform: translateY(0); }
+}
+@keyframes floatUpDownPolygon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+  100% { transform: translateY(0); }
+}
+.animate-float {
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+.animate-float-polygon {
+  animation: floatUpDownPolygon 3s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
