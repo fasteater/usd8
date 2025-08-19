@@ -46,11 +46,11 @@ const superPowers = [
     desc: "This super power will cloak USD8 balances and transfers behind on-chain privacy layers, bringing payment-grade confidentiality to an otherwise transparent blockchain.",
   },
   {
-    key: "collateral",
+    key: "multi-collateral",
     label: "Multi-Collateral",
     img: "/assets/power-collateral.png",
     hero: "/assets/hero-collateral.png",
-    desc: "This superpower aims to diversify USD8’s backing to a basket of tier-one stable coins, lowering the protocol’s exposure to any single asset and making USD8 more resilient to potential de-pegs.",
+    desc: "This superpower aims to diversify USD8's backing to a basket of tier-one stable coins, lowering the protocol's exposure to any single asset and making USD8 more resilient to potential de-pegs.",
   },
 ];
 
@@ -60,7 +60,7 @@ const polygonImages = {
   "yield": "/assets/polygon-yield.png",
   "free-transfer": "/assets/polygon-transfer.png",
   "privacy": "/assets/polygon-privacy.png",
-  "collateral": "/assets/polygon-collateral.png",
+  "multi-collateral": "/assets/polygon-collateral.png",
 };
 
 export default function LandingPage() {
@@ -162,6 +162,17 @@ export default function LandingPage() {
 
   return (
     <div style={{ background: "#252525", minHeight: "100vh", width: "100vw" }}>
+      <style>
+        {`
+          @font-face {
+            font-family: 'delight-bold';
+            src: url('/assets/fonts/delight-bold.woff2') format('woff2'),
+                 url('/assets/fonts/delight-bold.woff') format('woff');
+            font-weight: bold;
+            font-style: normal;
+          }
+        `}
+      </style>
       <div
         className="font-blex min-h-screen text-white flex flex-col items-center justify-center p-4"
         style={{
@@ -265,8 +276,13 @@ export default function LandingPage() {
         {/* --- Super Powers Section --- */}
         <div className="flex flex-col items-center mt-10 mb-10 w-full">
           <h2
-            className="text-3xl md:text-3xl mb-8 text-center"
-            style={{ fontFamily: "monospace", marginTop: 100, fontWeight: "normal" }}
+            className="text-center"
+            style={{ 
+              fontFamily: "delight-bold", 
+              marginTop: 100, 
+              fontSize: 50,
+              marginBottom: 32
+            }}
           >
             Explore Superpowers
           </h2>
@@ -421,7 +437,7 @@ export default function LandingPage() {
                 }}
               />
             </div>
-            {/* Collateral */}
+            {/* Multi-Collateral */}
             <div
               className={`absolute cursor-pointer flex items-center pl-6 rounded-[14px] transition-all duration-700
                 ${navGridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
@@ -430,19 +446,19 @@ export default function LandingPage() {
                 top: 157,
                 width: 232,
                 height: 67,
-                background: selectedPower === "collateral" ? "#4CF6FF" : "#181818",
+                background: selectedPower === "multi-collateral" ? "#4CF6FF" : "#181818",
                 transitionDelay: navGridVisible ? "240ms" : "0ms", // random order
                 transitionProperty: "opacity, transform",
               }}
-              onClick={() => setSelectedPower("collateral")}
+              onClick={() => setSelectedPower("multi-collateral")}
               onMouseEnter={e => {
-                if (selectedPower !== "collateral") {
+                if (selectedPower !== "multi-collateral") {
                   e.currentTarget.style.transition = "background-color 0s";
                   e.currentTarget.style.background = "#4CF6FF";
                 }
               }}
               onMouseLeave={e => {
-                if (selectedPower !== "collateral") {
+                if (selectedPower !== "multi-collateral") {
                   e.currentTarget.style.transition = "background-color 0s";
                   e.currentTarget.style.background = "#181818";
                 }
@@ -450,7 +466,7 @@ export default function LandingPage() {
             >
               <img
                 src="/assets/power-collateral.png"
-                alt="Collateral"
+                alt="Multi-Collateral"
                 style={{
                   width: 50,
                   height: "auto",
@@ -533,14 +549,16 @@ export default function LandingPage() {
               </div>
             </div>
             <h3
-              className={`text-2xl md:text-2xl mb-2 text-center transition-all
+              className={`text-center transition-all
                 ${descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{
-                fontFamily: "monospace",
+                fontFamily: "delight-bold",
+                fontSize: 35,
                 fontWeight: "normal",
                 transitionProperty: "opacity, transform",
                 transitionDuration: "700ms",
                 transitionDelay: descVisible ? "120ms" : "0ms",
+                marginBottom: 8
               }}
             >
               {superPowers.find(p => p.key === selectedPower).label}
@@ -561,15 +579,35 @@ export default function LandingPage() {
             >
               {superPowers.find(p => p.key === selectedPower).desc}
             </p>
-            {/* Removed Join Waiting List button */}
+            <a
+              href={`https://docs.usd8.finance/${selectedPower.replace('-', '')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`bg-[#73EFF1] hover:bg-[#00CC99] text-black font-semibold px-6 py-3 rounded transition-all
+                ${descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              style={{
+                transitionProperty: "opacity, transform",
+                transitionDuration: "700ms",
+                transitionDelay: descVisible ? "360ms" : "0ms",
+                marginTop: 30,
+                display: "inline-block"
+              }}
+            >
+              Learn More
+            </a>
           </div>
         </div>
         {/* --- End Super Powers Section --- */}
 
         <div ref={formRef} className="w-full max-w-md text-center mt-[50px] ">
           <h2
-            className="text-3xl md:text-3xl mb-8 text-center"
-            style={{ fontFamily: "monospace", fontWeight: "normal", marginTop: 80, marginBottom: 32 }}
+            className="text-center"
+            style={{ 
+              fontFamily: "delight-bold", 
+              marginTop: 80, 
+              fontSize: 50,
+              marginBottom: 32 
+            }}
           >
             Waiting List
           </h2>
@@ -647,7 +685,7 @@ export default function LandingPage() {
 
         <footer className=" bottom-4 flex text-gray-400 mb-[100px] mt-[250px]">
           <a href="https://x.com/usd8_official" target="_blank" rel="noopener noreferrer" className="hover:text-white">
-            X.com/usd8_official
+            X
           </a>
           <span className="w-[100px] h-auto"></span>
           <a href="https://docs.usd8.finance" className="hover:text-white">Docs</a>
