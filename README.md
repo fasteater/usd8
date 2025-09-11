@@ -1,8 +1,8 @@
-<img src="https://usd8.finance/assets/logo.png" width="300px" />
+<img src="https://usd8.finance/assets/logo.svg" width="300px" />
 <br/>
 
 # USD8     
-Stable Coin Wrapper with Super Powers.    
+Stable Coin offers hack coverage.    
 website https://usd8.finance.   
 docs https://docs.usd8.finance.   
 
