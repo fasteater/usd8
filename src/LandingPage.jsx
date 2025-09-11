@@ -166,8 +166,8 @@ export default function LandingPage() {
         {`
           @font-face {
             font-family: 'delight-bold';
-            src: url('/assets/fonts/delight-bold.woff2') format('woff2'),
-                 url('/assets/fonts/delight-bold.woff') format('woff');
+            src: url('/assets/delight-bold.woff2') format('woff2'),
+                 url('/assets/delight-bold.woff') format('woff');
             font-weight: bold;
             font-style: normal;
           }
@@ -181,9 +181,20 @@ export default function LandingPage() {
         }}
       >
         <img
-          src="/assets/logo.png"
-          className="md:w-[269px] w-[200px] h-auto z-10 mt-[80px] mb-[20px]"
+          src="/assets/logo.svg"
+          className="w-[100px] h-[100px] z-10 mt-[80px] mb-[20px]"
         />
+        <h1 className="text-2xl md:text-3xl text-center font-bold mt-2 mb-2"  style={{ 
+              fontFamily: "delight-bold", 
+              marginTop: 80, 
+              fontSize: 50,
+              marginBottom: 50
+            }}>
+          Say hi to hack protection
+        </h1>
+        <p className="text-base text-center mb-6 text-gray-300">
+          Usd8 is a stable coin protects the defi ecosystem
+        </p>
      
 
         {/* Overlay tyche.png and usd8bg.png to match tyche-statue.png position and size */}
@@ -268,343 +279,75 @@ export default function LandingPage() {
           </div>
         </div>
 
-        <p className="text-center text-base mb-10 leading-[30px] md:leading-[43px]">
-          USD8 is a stablecoin wrapper with superpowers like hack coverage, free transfers, privacy, and more.
-          Built by security auditors for DeFi users.
-        </p>
-
-        {/* --- Super Powers Section --- */}
         <div className="flex flex-col items-center mt-10 mb-10 w-full">
           <h2
             className="text-center"
             style={{ 
               fontFamily: "delight-bold", 
-              marginTop: 100, 
+              marginTop:100, 
               fontSize: 50,
               marginBottom: 32
             }}
           >
-            Explore Superpowers
+            Protected Savings
           </h2>
-          {/* Navigation Grid */}
-          <div
-            ref={navGridRef}
-            className="relative flex justify-center items-center mx-auto"
-            style={{
-              width: 309,
-              height: 221,
-              minWidth: 309,
-              minHeight: 221,
-              marginTop: 50,
-              marginBottom: 50,
-            }}
-          >
-            {/* Hack Coverage */}
-            <div
-              className={`absolute cursor-pointer flex items-center justify-center rounded-[18px] transition-all duration-700
-                ${navGridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                left: 0,
-                top: 0,
-                width: 127,
-                height: 147,
-                background: selectedPower === "hack-coverage" ? "#4CF6FF" : "#181818",
-                transitionDelay: navGridVisible ? "360ms" : "0ms", // random order
-                transitionProperty: "opacity, transform",
-              }}
-              onClick={() => setSelectedPower("hack-coverage")}
-              onMouseEnter={e => {
-                if (selectedPower !== "hack-coverage") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#4CF6FF";
-                }
-              }}
-              onMouseLeave={e => {
-                if (selectedPower !== "hack-coverage") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#181818";
-                }
-              }}
-            >
-              <img
-                src="/assets/power-hacker.png"
-                alt="Hack Coverage"
-                style={{
-                  width: 60,
-                  height: "auto",
-                  position: "absolute",
-                  left: 12,
-                  top: 12,
-                  objectFit: "contain"
-                }}
-              />
-            </div>
-            {/* Yield */}
-            <div
-              className={`absolute cursor-pointer flex items-center justify-end pr-4 rounded-[14px] transition-all duration-700
-                ${navGridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                left: 137,
-                top: 0,
-                width: 173,
-                height: 65,
-                background: selectedPower === "yield" ? "#4CF6FF" : "#181818",
-                transitionDelay: navGridVisible ? "0ms" : "0ms", // random order
-                transitionProperty: "opacity, transform",
-              }}
-              onClick={() => setSelectedPower("yield")}
-              onMouseEnter={e => {
-                if (selectedPower !== "yield") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#4CF6FF";
-                }
-              }}
-              onMouseLeave={e => {
-                if (selectedPower !== "yield") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#181818";
-                }
-              }}
-            >
-              <img src="/assets/power-yield.png" alt="Yield" style={{ width: 50, height: 50 }} />
-            </div>
-            {/* Free Transfer */}
-            <div
-              className={`absolute cursor-pointer flex items-center justify-center rounded-[14px] transition-all duration-700
-                ${navGridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                left: 137,
-                top: 74,
-                width: 96,
-                height: 75,
-                background: selectedPower === "free-transfer" ? "#4CF6FF" : "#181818",
-                transitionDelay: navGridVisible ? "480ms" : "0ms", // random order
-                transitionProperty: "opacity, transform",
-              }}
-              onClick={() => setSelectedPower("free-transfer")}
-              onMouseEnter={e => {
-                if (selectedPower !== "free-transfer") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#4CF6FF";
-                }
-              }}
-              onMouseLeave={e => {
-                if (selectedPower !== "free-transfer") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#181818";
-                }
-              }}
-            >
-              <img src="/assets/power-transfer.png" alt="Free Transfer" style={{ width: 50, height: 50 }} />
-            </div>
-            {/* Privacy */}
-            <div
-              className={`absolute cursor-pointer flex items-center justify-center rounded-[14px] transition-all duration-700
-                ${navGridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                left: 243,
-                top: 74,
-                width: 69,
-                height: 149,
-                background: selectedPower === "privacy" ? "#4CF6FF" : "#181818",
-                transitionDelay: navGridVisible ? "120ms" : "0ms", // random order
-                transitionProperty: "opacity, transform",
-              }}
-              onClick={() => setSelectedPower("privacy")}
-              onMouseEnter={e => {
-                if (selectedPower !== "privacy") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#4CF6FF";
-                }
-              }}
-              onMouseLeave={e => {
-                if (selectedPower !== "privacy") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#181818";
-                }
-              }}
-            >
-              <img
-                src="/assets/power-privacy.png"
-                alt="Privacy"
-                style={{
-                  width: 50,
-                  height: "auto",
-                  position: "absolute",
-                  top: 14,
-                  left: "50%",
-                  transform: "translateX(-50%)"
-                }}
-              />
-            </div>
-            {/* Multi-Collateral */}
-            <div
-              className={`absolute cursor-pointer flex items-center pl-6 rounded-[14px] transition-all duration-700
-                ${navGridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                left: 0,
-                top: 157,
-                width: 232,
-                height: 67,
-                background: selectedPower === "multi-collateral" ? "#4CF6FF" : "#181818",
-                transitionDelay: navGridVisible ? "240ms" : "0ms", // random order
-                transitionProperty: "opacity, transform",
-              }}
-              onClick={() => setSelectedPower("multi-collateral")}
-              onMouseEnter={e => {
-                if (selectedPower !== "multi-collateral") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#4CF6FF";
-                }
-              }}
-              onMouseLeave={e => {
-                if (selectedPower !== "multi-collateral") {
-                  e.currentTarget.style.transition = "background-color 0s";
-                  e.currentTarget.style.background = "#181818";
-                }
-              }}
-            >
-              <img
-                src="/assets/power-collateral.png"
-                alt="Multi-Collateral"
-                style={{
-                  width: 50,
-                  height: "auto",
-                  position: "absolute",
-                  right: 16,
-                  top: "50%",
-                  transform: "translateY(-50%)"
-                }}
-              />
-            </div>
-          </div>
-          {/* Details Section */}
-          <div className="flex flex-col items-center mt-10 w-full">
-            <div
-              className={`relative w-[213px] h-[213px] mb-[100px] transition-all
-                ${descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                transitionProperty: "opacity, transform",
-                transitionDuration: descVisible ? "700ms" : "700ms",
-                transitionDelay: descVisible ? "0ms" : "0ms",
-              }}
-            >
-              {/* Polygon overlay, centered with hero image */}
-              <div
-                className="absolute"
-                style={{
-                  width: 213,
-                  height: 213,
-                  left: "-12%",
-                  zIndex: 1,
-                  pointerEvents: "none",
-                }}
-              >
-                <img
-                  src={polygonImages[selectedPower]}
-                  alt="Polygon"
-                  className="animate-float-polygon"
-                  style={{
-                    width: 213,
-                    height: 213,
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    transform: "none",
-                    opacity: 0.95,
-                    filter: "blur(2px)",
-                  }}
-                />
-              </div>
-              {/* Hero image/icon */}
-              <div
-                className="absolute left-1/2 top-1/2"
-                style={{
-                  width: 213,
-                  height: 213,
-                  transform: "translate(-50%, -50%)",
-                  zIndex: 2,
-                  pointerEvents: "none",
-                }}
-              >
-                <img
-                  src={superPowers.find(p => p.key === selectedPower).img}
-                  alt={superPowers.find(p => p.key === selectedPower).label}
-                  className={
-                    (descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8") +
-                    " animate-float"
-                  }
-                  style={{
-                    width: 213,
-                    height: 213,
-                    objectFit: "contain",
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    transitionProperty: "opacity, transform",
-                    transitionDuration: "700ms",
-                    transitionDelay: descVisible ? "0ms" : "0ms",
-                  }}
-                />
-              </div>
-            </div>
-            <h3
-              className={`text-center transition-all
-                ${descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                fontFamily: "delight-bold",
-                fontSize: 35,
-                fontWeight: "normal",
-                transitionProperty: "opacity, transform",
-                transitionDuration: "700ms",
-                transitionDelay: descVisible ? "120ms" : "0ms",
-                marginBottom: 8
-              }}
-            >
-              {superPowers.find(p => p.key === selectedPower).label}
-            </h3>
-            <p
-              className={`text-center text-base mb-6 w-full transition-all
-                ${descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}
-                md:leading-[43px] leading-[30px]`}
-              style={{
-                marginTop: 20,
-                maxWidth: "80%",
-                marginLeft: "auto",
-                marginRight: "auto",
-                transitionProperty: "opacity, transform",
-                transitionDuration: "700ms",
-                transitionDelay: descVisible ? "240ms" : "0ms",
-              }}
-            >
-              {superPowers.find(p => p.key === selectedPower).desc}
-            </p>
-            <a
-              href={`https://docs.usd8.finance/${selectedPower.replace('-', '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`bg-[#73EFF1] hover:bg-[#00CC99] text-black font-semibold px-6 py-3 rounded transition-all
-                ${descVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
-              style={{
-                transitionProperty: "opacity, transform",
-                transitionDuration: "700ms",
-                transitionDelay: descVisible ? "360ms" : "0ms",
-                marginTop: 30,
-                display: "inline-block"
-              }}
-            >
-              Learn More
-            </a>
-          </div>
+          <p className="text-base text-center mb-6 text-gray-300">
+            Deposits in Usd8 Savings are protected by the Cover Pool upto 80% in case any underlying protocol being hacked.
+          </p>
+          <img
+            src="/assets/savingsVault.png"
+            className="w-[410px] z-10 mt-[80px] mb-[20px]"
+          />
         </div>
-        {/* --- End Super Powers Section --- */}
 
-        <div ref={formRef} className="w-full max-w-md text-center mt-[50px] ">
+        <div className="flex flex-col items-center mt-10 mb-10 w-full">
           <h2
             className="text-center"
             style={{ 
               fontFamily: "delight-bold", 
-              marginTop: 80, 
+              marginTop:100, 
+              fontSize: 50,
+              marginBottom: 32
+            }}
+          >
+            High Yield Cover Pool
+          </h2>
+          <p className="text-base text-center mb-6 text-gray-300">
+            Guarded by our security experts, all covered protocols are independently reviewed and audited. All yield delivered in Usd8.
+          </p>
+          <img
+            src="/assets/coverPool.png"
+            className="w-[918px] z-10 mt-[80px] mb-[20px]"
+          />
+        </div>
+
+         <div className="flex flex-col items-center mt-10 mb-10 w-full">
+          <h2
+            className="text-center"
+            style={{ 
+              fontFamily: "delight-bold", 
+              marginTop:100, 
+              fontSize: 50,
+              marginBottom: 32
+            }}
+          >
+            General Defi Protection 
+          </h2>
+          <p className="text-base text-center mb-6 text-gray-300">
+            For active defi users prefer customized yield strategy, Usd8 doubles as protection for vetted Defi protocols.
+          </p>
+          <img
+            src="/assets/coveredProtocols.png"
+            className="w-[850px] z-10 mt-[80px] mb-[20px]"
+          />
+        </div>
+
+        <div ref={formRef} className="w-full max-w-md text-center mt-[80px] ">
+          <h2
+            className="text-center"
+            style={{ 
+              fontFamily: "delight-bold", 
+              marginTop: 200, 
               fontSize: 50,
               marginBottom: 32 
             }}
@@ -628,7 +371,7 @@ export default function LandingPage() {
               className="appearance-none w-full block mx-auto px-6 md:py-4 py-5 bg-gray-200 text-black rounded mb-[40px]"
               required
             >
-              <option value="0">Amount to wrap?</option>
+              <option value="0">Amount</option>
               <option value="500">up to $500</option>
               <option value="1000">up to $1k</option>
               <option value="10000">up to $10k</option>
