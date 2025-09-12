@@ -184,14 +184,17 @@ export default function LandingPage() {
           src="/assets/logo.svg"
           className="w-[100px] h-[100px] z-10 mt-[80px] mb-[20px]"
         />
-        <h1 className="text-2xl md:text-3xl text-center font-bold mt-2 mb-2"  style={{ 
-              fontFamily: "delight-bold", 
-              marginTop: 80, 
-              fontSize: 50,
-              marginBottom: 50
-            }}>
+        <h2
+          className="text-center"
+          style={{
+            fontFamily: "delight-bold",
+            marginTop: 100,
+            fontSize: 50,
+              marginBottom: 32
+            }}
+          >
           Say hi to hack protection
-        </h1>
+        </h2>
         <p className="text-base text-center mb-6 text-gray-300">
           Usd8 is a stable coin protects the defi ecosystem
         </p>
