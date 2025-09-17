@@ -35,3 +35,12 @@
   animation: floatUpDownPolygon 3s ease-in-out infinite;
   animation-delay: 1.2s;
 }
+
+/* Add to your global CSS file, e.g. index.css */
+a, .text-link {
+  color: #73EFF1;
+  transition: color 0.18s;
+}
+a:hover, .text-link:hover {
+  color: #F5C75E;
+}

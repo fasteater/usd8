@@ -196,7 +196,7 @@ export default function LandingPage() {
           Say hi to hack protection
         </h2>
         <p className="text-base text-center mb-6 text-gray-300">
-          Usd8 is a stable coin protects the defi ecosystem
+          Usd8 is a stable coin doubles as hack protection
         </p>
      
 
@@ -295,7 +295,7 @@ export default function LandingPage() {
             Protected Savings
           </h2>
           <p className="text-base text-center mb-6 text-gray-300">
-            Deposits in Usd8 Savings are protected by the Cover Pool upto 80% in case any underlying protocol being hacked.
+            Deposits in Usd8 Savings are protected by the Cover Pool upto 80% in case any underlying protocol being hacked. <a href="https://docs.usd8.finance/protectedSavings.html" target="_blank">Learn more</a>.
           </p>
           <img
             src="/assets/savingsVault.png"
@@ -316,7 +316,7 @@ export default function LandingPage() {
             High Yield Cover Pool
           </h2>
           <p className="text-base text-center mb-6 text-gray-300">
-            Guarded by our security experts, all covered protocols are independently reviewed and audited. All yield delivered in Usd8.
+            Guarded by our security experts, all covered protocols are independently reviewed and audited. All yield delivered in Usd8. <a href="https://docs.usd8.finance/CoverPool.html" target="_blank">Learn more</a>.
           </p>
           <img
             src="/assets/coverPool.png"
@@ -337,7 +337,7 @@ export default function LandingPage() {
             General Defi Protection 
           </h2>
           <p className="text-base text-center mb-6 text-gray-300">
-            For active defi users prefer customized yield strategy, Usd8 doubles as protection for vetted Defi protocols.
+            For active defi users prefer customized yield strategy, Usd8 doubles as protection for vetted Defi protocols.  <a href="https://docs.usd8.finance/CoverPool.html#covered-defi-protocols" target="_blank">Learn more</a>.
           </p>
           <img
             src="/assets/coveredProtocols.png"
