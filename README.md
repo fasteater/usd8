@@ -7,7 +7,7 @@ website https://usd8.finance.
 docs https://docs.usd8.finance.   n
 
 # Contact
-follow us on x https://x.com/USD8_official.   
+follow us on x https://x.com/usd8_.   
 telegram group for devs https://t.me/+e84i2oYk1ao1MTk1.   
 info[at]usd8.finance.   
 
