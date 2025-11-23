@@ -193,10 +193,10 @@ export default function LandingPage() {
               marginBottom: 32
             }}
           >
-          Say hi to hack protection
+          Say hi to Defi protection
         </h2>
         <p className="text-base text-center mb-6 text-gray-300">
-          Usd8 is a stable coin doubles as hack protection
+          Usd8 is a stable coin doubles as Defi protection
         </p>
      
 
@@ -295,7 +295,7 @@ export default function LandingPage() {
             Protected Savings
           </h2>
           <p className="text-base text-center mb-6 text-gray-300">
-            Deposits in Usd8 Savings are protected by the Cover Pool upto 80% in case any underlying protocol being hacked. <a href="https://docs.usd8.finance/protectedSavings.html" target="_blank">Learn more</a>.
+            Deposits in Usd8 Savings are protected by the Cover Pool upto 80% in case any underlying protocol fails. <a href="https://docs.usd8.finance/protectedSavings.html" target="_blank">Learn more</a>.
           </p>
           <img
             src="/assets/savingsVault.png"
@@ -429,11 +429,9 @@ export default function LandingPage() {
          {/* <p className="text-xs text-gray-600 mt-[30px]">batch one 800/1000</p> */}
         </div>
 
-        <footer className=" bottom-4 flex text-gray-400 mb-[100px] mt-[250px]">
-          <a href="https://x.com/usd8_" target="_blank" rel="noopener noreferrer">
-            X
-          </a>
-          <span className="w-[100px] h-auto"></span>
+        <footer className="bottom-4 flex w-full items-center justify-center gap-10 text-gray-400 mb-[100px] mt-[250px]">
+          <a href="https://x.com/usd8_" target="_blank" rel="noopener noreferrer">X</a>
+          <a href="https://t.me/+e84i2oYk1ao1MTk1" target="_blank" rel="noopener noreferrer">Telegram</a>
           <a href="https://docs.usd8.finance">Docs</a>
         </footer>
       </div>
